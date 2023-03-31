@@ -1,3 +1,4 @@
+import 'package:covid/screen/doctors.dart';
 import 'package:flutter/material.dart';
 
 class GetPage extends StatefulWidget {
@@ -83,7 +84,7 @@ class _GetPageState extends State<GetPage> {
                   
                   ),
                   onTap: (() {
-                    
+                      Navigator.push(context,MaterialPageRoute(builder: (context)=>Doctors()));
                   }),
                   title: Text('STI Problems?'),
                   subtitle: Text('Find suitable specialists here'),
@@ -92,47 +93,62 @@ class _GetPageState extends State<GetPage> {
                         backgroundColor: Colors.blueAccent
                     ),
                     onPressed: (){
-    
+                     Navigator.push(context,MaterialPageRoute(builder: (context)=>Doctors()));
                   }, icon: Icon(Icons.arrow_right_alt_sharp,size: 33,))             ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 12,left: 5),
+                padding: const EdgeInsets.only(top: 12),
                 child: Row(
                   children: [
                     Text('Spedialty 😷',style: TextStyle(fontSize: 20),),
                   ],
                 ),
               ),
-            //   ListView(
-            //     // scrollDirection: Axis.horizontal,
-            //     children: [
-            //      Padding(
-            //        padding: const EdgeInsets.only(top: 12),
-            //        child: Container(
-            //         height: 150,
-            //         width: 130,
-            //         decoration: BoxDecoration(
-            //           color: Colors.amber,
-            //           borderRadius: BorderRadius.circular(30),
-            //           ),
-            //      ),
-            //    ),
-            //   ],
-            // ),
-          //  GridView.count(
-          //   scrollDirection: Axis.horizontal,
-          //    crossAxisCount: 4,
-          //     children: [
-          //      Container(
-          //       height: 150,
-          //        width: 130,
-          //         decoration: BoxDecoration(
-          //          color: Colors.amber,
-          //           borderRadius: BorderRadius.circular(30),
-          //          ),
-          //        ),
-          //      ],
-          //    )
+              Expanded(
+                flex: 1,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                   Padding(
+                     padding: const EdgeInsets.only(top: 12,left: 5,right: 5),
+                     child: Container(
+                      height: 130,
+                      width: 130,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(image: AssetImage('images/brain.png'),fit: BoxFit.fill),
+                        color: Colors.grey[300],
+                        borderRadius: BorderRadius.circular(30),
+                        ),
+                   ),
+                 ),
+                   Padding(
+                     padding: const EdgeInsets.only(top: 12,left: 5,right: 5),
+                     child: Container(
+                      height: 130,
+                      width: 130,
+                      decoration: BoxDecoration(
+                       image: DecorationImage(image: AssetImage('images/scaff.png'),fit: BoxFit.fill),
+                        color: Colors.grey[300],
+                        borderRadius: BorderRadius.circular(30),
+                        ),
+                       
+                   ),
+                 ),
+                   Padding(
+                     padding: const EdgeInsets.only(top: 12,left: 5,right: 5),
+                     child: Container(
+                      height: 130,
+                      width: 130,
+                      decoration: BoxDecoration(  
+                      image: DecorationImage(image: AssetImage('images/tear.png'),fit: BoxFit.fill),
+                        color: Colors.grey[300],
+                        borderRadius: BorderRadius.circular(30),
+                        ),
+                   ),
+                 ),
+                ],
+                          ),
+              ),
            ],
          ),
        )
